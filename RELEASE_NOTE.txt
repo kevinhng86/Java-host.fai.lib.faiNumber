@@ -1,0 +1,10 @@
+fainumber, where "number" is none capitalized, are Maven built releases.
+faiNumber, where "Number" is capitalized, are manually built releases.
+
+fainumber-1.#.#.f      -> Support JDK 7+. Built with a version of JDK 11+ compiler.
+fainumber-1.#.#.f-(n)  -> Support JDK n+. Built with a version of JDK (n) compiler.
+                          (The smallest of n is 8).
+                          
+Note that for this document, a version of could be of any minor version of the major
+version. For example a version of JDK 11 compiler could be JDK 11.0.0, JDK 11.0.1
+, or similars.

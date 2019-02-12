@@ -1,0 +1,103 @@
+<!-- JDK 7 POM -->
+<!-- (n).#.#.f-(v) -> v = TARGET JDK VERSION -->
+<!-- (n).#.#.f     ->     TARGET JDK 7 -->
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- PROJECT DESCRIPTION -->
+  <groupId>host.fai.lib</groupId>
+  <artifactId>fainumber</artifactId>
+  <packaging>jar</packaging>
+  <name>faiNumber</name>
+  <version>1.0.0.f</version>
+  <description>A library that mainly deals with converting strings of number to a supported primitive data type, numerically validating strings or chars, numerically comparing strings, and converting a supported primitive data type to numerical strings.</description>
+  <url>https://lib.fai.org/java/faiNumber</url>  
+  <inceptionYear>2019</inceptionYear>
+  <!-- END PROJECT DESCRIPTION -->
+
+  <!-- SCM -->
+  <scm>
+    <connection>scm:git:git://github.com/kevinhng86/Java-host.fai.lib.faiNumber.git</connection>
+    <developerConnection>scm:git:ssh://github.com:kevinhng86/Java-host.fai.lib.faiNumber.git</developerConnection>
+    <url>http://github.com/kevinhng86/Java-host.fai.lib.faiNumber/tree/master</url>
+  </scm>
+  <!-- END SCM -->
+
+  <!-- LICENSE -->
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+      <comments>Copyright 2019 - Khang Hoang Nguyen.</comments>
+    </license>
+  </licenses>
+  <!-- END LICENSE -->
+
+  <!-- DEVELOPERS & CONTRIBUTORS -->
+  <developers>
+    <developer>
+      <id>kevin</id>
+      <name>Khang Hoang Nguyen</name>
+      <email>kevin@fai.host</email>
+      <organization>fai.host</organization>
+    </developer>
+  </developers>
+  <!-- END DEVELOPERS & CONTRIBUTORS -->
+  
+  <properties>
+    <jdkTarget>1.7</jdkTarget>
+    <buildDesc>Java 7+</buildDesc>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>    
+    <maven.compiler.source>${jdkTarget}</maven.compiler.source>
+    <maven.compiler.target>${jdkTarget}</maven.compiler.target>
+  </properties>
+ 
+  <!-- Note: tests were not built with JUNIT, manual test. -->
+  <build>
+    <sourceDirectory>src/</sourceDirectory>
+    <directory>bin/</directory>
+    <testSourceDirectory>test/</testSourceDirectory>
+    
+    <!-- RESOURCES -->
+    <resources>
+        <resource>
+            <directory>${project.basedir}</directory>
+            <includes>
+                <include>LICENSE</include>
+                <include>README.md</include>
+            </includes>
+            <targetPath>META-INF</targetPath>
+        </resource>
+    </resources>
+    <!-- END RESOURCES -->    
+    
+    <!-- MANIFEST INFO -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Build-Jdk>${java.version}</Build-Jdk>
+              <Build-Target-Jdk>${jdkTarget}</Build-Target-Jdk>
+              <Build-Desc>${buildDesc}</Build-Desc>
+              <Build-Timestamp>${maven.build.timestamp}</Build-Timestamp>
+              <Package-Name>${project.groupId}.${project.artifactId}</Package-Name>
+              <Package-Version>${project.version}</Package-Version>
+              <Project-Inception-Year>${project.inceptionYear}</Project-Inception-Year>
+              <Project-Desc>${project.description}</Project-Desc>
+              <Project-Repo-Home>https://github.com/kevinhng86/Java-host.fai.lib.faiNumber</Project-Repo-Home>
+              <Documentation>https://lib.fai.host/java/faiNumber/v1</Documentation>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+    <!-- END MANIFEST INFO --> 
+  </build>  
+</project>
