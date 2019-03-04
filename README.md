@@ -47,6 +47,9 @@ read the documentation for what they do before using them as some of the
 methods of this library were built for expert usage. The previous is
 especially true for any assume**** methods that provide by this library.
 
+## Benchmark
+<a href="https://github.com/kevinhng86/Java-host.fai.lib.faiNumber/blob/v1/benchmark.md">v1.0.0.f</a>
+
 ## Help
 <a href="//lib.fai.host/java/faiNumber/v1/">faiNumber's API Documentation</a>
 
